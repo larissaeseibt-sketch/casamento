@@ -1,0 +1,1051 @@
+z<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Larissa &amp; Roberto — 14.11.2026</title>
+
+<!-- ============================================================
+     PRÉVIA NO WHATSAPP / REDES SOCIAIS (Open Graph)
+     EDITE AQUI: troque as 3 URLs abaixo pelo endereço real do site
+     depois de subir no GitHub Pages. Exemplo:
+       https://seuusuario.github.io/casamento/
+     A imagem PRECISA ser um endereço completo (começando com https://)
+     — caminho relativo tipo "fotos/preview.jpg" NÃO funciona no WhatsApp.
+     Salve a imagem de prévia como  fotos/preview.jpg  (1200x630 px,
+     abaixo de 300 KB) e ajuste a URL abaixo.
+     ============================================================ -->
+<meta property="og:type"         content="website">
+<meta property="og:locale"       content="pt_BR">
+<meta property="og:site_name"    content="Larissa &amp; Roberto">
+<meta property="og:title"        content="Larissa &amp; Roberto — 14 de novembro de 2026">
+<meta property="og:description"  content="Carinhosamente, convidamos você e sua família para celebrar o nosso casamento. Toque para abrir o convite.">
+<meta property="og:url"          content="https://SEUUSUARIO.github.io/casamento/">
+<meta property="og:image"        content="https://SEUUSUARIO.github.io/casamento/fotos/preview.jpg">
+<meta property="og:image:secure_url" content="https://SEUUSUARIO.github.io/casamento/fotos/preview.jpg">
+<meta property="og:image:type"   content="image/jpeg">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt"    content="Convite de casamento de Larissa e Roberto">
+
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Larissa &amp; Roberto — 14 de novembro de 2026">
+<meta name="twitter:description" content="Carinhosamente, convidamos você e sua família para celebrar o nosso casamento.">
+<meta name="twitter:image"       content="https://SEUUSUARIO.github.io/casamento/fotos/preview.jpg">
+
+<meta name="description"         content="Convite de casamento de Larissa e Roberto — 14 de novembro de 2026, às 16h, Recanto João e Maria, Cabreúva.">
+<meta name="theme-color"         content="#6B7355">
+
+<!-- ============================================================
+     CONVITE DE CASAMENTO — LARISSA & ROBERTO
+     Estilo: papel texturizado · tipografia fina espaçada ·
+             caligrafia delicada · botânica em traço fino
+     Cores: pérola (papel) · verde sálvia/oliva (tinta)
+
+     ONDE EDITAR (busque por "EDITE AQUI"):
+       1. Música ........................ <audio> (musica.mp3)
+       2. Frase romântica ............... seção .verse
+       3. Nossa história ................ seção #historia
+       4. Link lista de presentes ....... id="link-presentes"
+       5. Link confirmar presença ....... id="link-rsvp"
+       6. Texto de informações .......... modal #modal-info
+       7. Link do Google Maps ........... id="link-maps"
+       8. Nome do local ................. card de localização
+       9. Programação do dia ............ seção #programa
+      10. Link "sugira uma música" ...... id="link-playlist"
+      11. Fotos ........................ pasta "fotos/" (4 imagens)
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --papel:        #F7F4EB;
+    --papel-luz:    #FBF9F2;
+    --papel-sombra: #E9E5D6;
+    --salvia:       #6B7355;   /* tinta principal, verde suave */
+    --salvia-claro: #9AA080;   /* fios e hairlines */
+    --oliva-escuro: #4A5138;
+    --oliva-noite:  #343A26;
+    --tinta:        #4E5342;
+    --sombra:       rgba(52,58,38,.22);
+
+    /* textura de papel (grão sutil em SVG) */
+    --grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.42  0 0 0 0 0.44  0 0 0 0 0.36  0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    background:var(--papel) var(--grao);
+    color:var(--tinta);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  body.locked{ overflow:hidden; height:100vh; }
+
+  .script{ font-family:'Mrs Saint Delafield', cursive; font-weight:400; }
+  .caps{ text-transform:uppercase; letter-spacing:.34em; font-weight:400; }
+
+  /* ================================================================
+     ABERTURA DO CONVITE — envelope 3D realista
+     (aba dobra para cima em perspectiva, a carta sai de dentro)
+     ================================================================ */
+  #envelope-overlay{
+    position:fixed; inset:0; z-index:1000;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:26px;
+    background-color:#EAE4D2;
+    background-image:var(--grao),
+      radial-gradient(circle at 50% 40%, rgba(255,255,255,.55), transparent 52%),
+      radial-gradient(circle at 50% 115%, rgba(120,118,96,.28), transparent 62%),
+      linear-gradient(180deg, #F0EBDD 0%, #E6E0CD 100%);
+    overflow:hidden;
+    transition:opacity 1s ease, visibility 1s ease;
+  }
+  #envelope-overlay.done{ opacity:0; visibility:hidden; }
+
+  /* partículas douradas flutuando */
+  .dust{
+    position:absolute; border-radius:50%;
+    background:#C9B27C;
+    opacity:0; pointer-events:none;
+    animation:dust-float linear infinite;
+  }
+  @keyframes dust-float{
+    0%  { transform:translateY(30px) scale(.6); opacity:0; }
+    15% { opacity:.7; }
+    85% { opacity:.25; }
+    100%{ transform:translateY(-42vh) scale(1); opacity:0; }
+  }
+
+  .env-title{
+    font-family:'Mrs Saint Delafield', cursive;
+    font-size:clamp(2.7rem, 11vw, 3.6rem);
+    color:var(--salvia);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .env-caption{
+    font-size:.68rem; letter-spacing:.4em; text-transform:uppercase;
+    color:var(--salvia); font-weight:500;
+    animation:cap-pulse 2.6s ease-in-out infinite;
+    transition:opacity .5s ease;
+  }
+  @keyframes cap-pulse{ 0%,100%{opacity:.5} 50%{opacity:1} }
+  #envelope-overlay.open .env-title,
+  #envelope-overlay.open .env-caption{ opacity:0; transform:translateY(-8px); }
+
+  /* palco 3D: o envelope flutua suavemente (formato retrato) */
+  .env-stage{
+    position:relative;
+    height:min(58vh, 470px);
+    aspect-ratio:.64;          /* retângulo em pé, como o convite */
+    perspective:1100px;
+    animation:env-idle 4.5s ease-in-out infinite;
+    transition:transform 1s ease, opacity .9s ease;
+  }
+  @keyframes env-idle{
+    0%,100%{ transform:translateY(0); }
+    50%    { transform:translateY(-7px); }
+  }
+  #envelope-overlay.out  .env-stage{ animation:none; }
+  #envelope-overlay.done .env-stage{ transform:scale(1.05); opacity:0; }
+
+  .env-shadow{
+    position:absolute; left:10%; right:10%; bottom:-34px; height:26px;
+    background:radial-gradient(ellipse at center, rgba(70,72,52,.38), transparent 65%);
+    filter:blur(4px);
+  }
+
+  /* fundo interno do envelope */
+  .env-back{
+    position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg, #DDD6C2 0%, #D1CAB3 100%);
+    border-radius:10px;
+  }
+
+  /* a carta dentro do envelope */
+  .env-paper{
+    position:absolute; left:4.5%; right:4.5%; top:2%; height:96%;
+    z-index:2;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:30px 16px;
+    text-align:center;
+    background:var(--papel-luz) var(--grao);
+    border-radius:2px;
+    box-shadow:0 16px 40px rgba(60,62,45,.35);
+    transform:translateY(0);
+    transition:transform 1.25s cubic-bezier(.18,.72,.24,1);
+  }
+  .env-paper::before{
+    content:''; position:absolute; inset:9px;
+    border:1px solid rgba(107,115,85,.35); pointer-events:none;
+  }
+  #envelope-overlay.out .env-paper{ transform:translateY(-62%); }
+
+  .env-paper .p-word{
+    font-family:'Mrs Saint Delafield', cursive;
+    font-size:1.7rem; color:var(--salvia); line-height:1;
+    margin-bottom:8px;
+  }
+  .env-paper .p-tree{ width:58px; margin:0 auto 10px; color:var(--salvia); }
+  .env-paper .p-tree svg{ width:100%; height:auto; display:block; }
+  .env-paper .p-names{
+    font-size:clamp(.95rem, 4vw, 1.15rem);
+    letter-spacing:.32em; text-transform:uppercase; font-weight:400;
+    color:var(--oliva-escuro); line-height:1.5;
+    margin:2px 0 10px;
+  }
+  .env-paper .p-rule{ width:52px; height:1px; background:var(--salvia-claro); margin:0 auto 10px; }
+  .env-paper .p-date{ font-size:.74rem; letter-spacing:.38em; color:var(--salvia); font-weight:500; }
+
+  /* frente do envelope (bolso com recorte em V) */
+  .env-front{
+    position:absolute; inset:0; z-index:3;
+    background:linear-gradient(180deg, #F3EEE0 0%, #ECE6D5 52%, #E4DDC9 100%);
+    box-shadow:inset 0 0 0 1px rgba(120,118,96,.22);
+    clip-path:polygon(0 0, 50% 34%, 100% 0, 100% 100%, 0 100%);
+    border-radius:10px;
+  }
+  .env-front::before{  /* vincos diagonais do bolso */
+    content:''; position:absolute; inset:0;
+    background:
+      linear-gradient(63deg,  rgba(96,94,74,.10), transparent 38%),
+      linear-gradient(-63deg, rgba(96,94,74,.10), transparent 38%),
+      linear-gradient(0deg,   rgba(96,94,74,.10), transparent 34%);
+    clip-path:inherit;
+  }
+
+  /* aba: dobra para cima em 3D de verdade */
+  .env-flap{
+    position:absolute; left:0; right:0; top:0; height:35%;
+    z-index:4;
+    background:linear-gradient(180deg, #F6F2E5 0%, #ECE6D4 100%);
+    box-shadow:inset 0 0 0 1px rgba(120,118,96,.18);
+    clip-path:polygon(0 0, 100% 0, 50% 100%);
+    border-radius:10px 10px 0 0;
+    transform-origin:50% 0%;
+    transform:rotateX(0deg);
+    transition:transform .95s cubic-bezier(.55,.06,.34,.96) .15s;
+    filter:drop-shadow(0 6px 10px rgba(80,80,60,.28));
+  }
+  #envelope-overlay.open .env-flap{ transform:rotateX(-178deg); }
+  #envelope-overlay.flap-behind .env-flap{ z-index:1; filter:none; }
+
+  /* lacre de cera */
+  .env-seal{
+    position:absolute; left:50%; top:34%;
+    transform:translate(-50%,-50%);
+    width:84px; height:84px;
+    z-index:5; cursor:pointer;
+    border-radius:50% 50% 50% 50% / 52% 48% 52% 48%;
+    background:
+      radial-gradient(circle at 32% 26%, #A9B283 0%, #7E885E 36%, #5D6842 70%, #47512F 100%);
+    box-shadow:
+      0 6px 16px rgba(60,66,40,.5),
+      inset 0 2px 4px rgba(255,255,255,.35),
+      inset 0 -4px 8px rgba(30,36,16,.55);
+    display:grid; place-items:center;
+    transition:opacity .4s ease, transform .4s ease;
+    animation:seal-breathe 3.2s ease-in-out infinite;
+    -webkit-tap-highlight-color:transparent;
+  }
+  @keyframes seal-breathe{
+    0%,100%{ transform:translate(-50%,-50%) scale(1); }
+    50%    { transform:translate(-50%,-50%) scale(1.05); }
+  }
+  .env-seal::before{  /* anel interno gravado */
+    content:''; position:absolute; inset:10px;
+    border-radius:inherit;
+    border:1.5px solid rgba(35,42,20,.5);
+    box-shadow:inset 0 1px 2px rgba(255,255,255,.25);
+  }
+  .env-seal .s-mono{
+    display:flex; align-items:center; justify-content:center; gap:.16em;
+    font-size:1.02rem; line-height:1;
+    letter-spacing:.14em; font-weight:500;
+    color:#F3F0DE;
+    text-shadow:0 1px 1px rgba(30,36,16,.45);
+  }
+  .env-seal .s-heart{ font-size:.62em; transform:translateY(.02em); }
+  #envelope-overlay.open .env-seal{
+    opacity:0; transform:translate(-50%,-50%) scale(.5) rotate(-14deg);
+    animation:none;
+  }
+
+  /* a carta cresce suavemente até ocupar a tela e "virar" a página */
+  .env-paper.growing{
+    position:fixed; right:auto; bottom:auto; margin:0;
+    z-index:10;
+    border-radius:0;
+    box-shadow:none;
+    transition:left 1.05s cubic-bezier(.3,.65,.15,1),
+               top 1.05s cubic-bezier(.3,.65,.15,1),
+               width 1.05s cubic-bezier(.3,.65,.15,1),
+               height 1.05s cubic-bezier(.3,.65,.15,1);
+  }
+  .env-paper.growing > *{ opacity:0; transition:opacity .55s ease; }
+  .env-paper.growing::before{ opacity:0; transition:opacity .4s ease; }
+  #envelope-overlay.grow .env-stage{ opacity:0; }
+
+  /* ================================================================
+     CONTROLES DE MÚSICA
+     ================================================================ */
+  .music-controls{ position:fixed; top:18px; right:16px; z-index:900; }
+  .music-btn{
+    width:46px; height:46px; border-radius:50%;
+    border:1px solid rgba(107,115,85,.5);
+    background:rgba(251,249,242,.85);
+    color:var(--salvia);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; backdrop-filter:blur(4px);
+    box-shadow:0 4px 14px var(--sombra);
+    transition:transform .2s ease;
+  }
+  .music-btn:hover{ transform:scale(1.07); }
+  .music-btn svg{ width:19px; height:19px; }
+
+  /* ================================================================
+     SEÇÕES
+     ================================================================ */
+  .section{ padding:58px 26px; max-width:660px; margin:0 auto; text-align:center; }
+  .eyebrow{
+    font-size:.64rem; letter-spacing:.44em; text-transform:uppercase;
+    color:var(--salvia); font-weight:500; margin-bottom:24px;
+  }
+
+  /* ajustes finos de espaçamento entre seções */
+  #historia{ padding-bottom:34px; }
+  #detalhes{ padding-top:34px; }
+  #local{ padding-top:32px; padding-bottom:32px; }
+  #galeria{ padding-bottom:34px; }
+  .message{ padding-top:36px; }
+  .script-title{
+    font-family:'Mrs Saint Delafield', cursive;
+    font-size:clamp(2.7rem, 11vw, 3.5rem);
+    color:var(--salvia); font-weight:400;
+    margin-bottom:30px; line-height:1.15;
+  }
+  .branch-divider{ width:120px; margin:0 auto 28px; display:block; color:var(--salvia); opacity:.8; }
+
+  /* ==================== HERO ==================== */
+  .hero{
+    position:relative; text-align:center;
+    padding:104px 26px 78px;
+  }
+  .hero-word{
+    font-family:'Mrs Saint Delafield', cursive;
+    font-size:clamp(2.4rem, 10vw, 3.1rem);
+    color:var(--salvia); line-height:1;
+    margin-bottom:40px;
+  }
+
+  /* ícone de araucária em traço fino */
+  .araucaria{
+    width:clamp(112px, 34vw, 138px);
+    margin:0 auto 42px;
+    color:var(--salvia);
+  }
+  .araucaria svg{ width:100%; height:auto; display:block; }
+
+  .hero-names{
+    font-size:clamp(1.15rem, 5vw, 1.5rem);
+    letter-spacing:.4em; text-transform:uppercase; font-weight:400;
+    color:var(--oliva-escuro);
+    margin-bottom:26px;
+    padding-left:.4em; /* compensa o letter-spacing final */
+  }
+  .hero-intro{
+    font-style:italic; font-weight:300;
+    font-size:1.24rem; color:var(--tinta);
+    max-width:400px; margin:0 auto 30px;
+  }
+  .hero-date{
+    font-size:clamp(1.05rem, 4.6vw, 1.32rem);
+    letter-spacing:.3em; font-weight:400;
+    color:var(--salvia);
+  }
+
+  /* ==================== FOTO PRINCIPAL (banner) ==================== */
+  .photo-band{
+    position:relative; height:60vh; min-height:360px;
+    background:var(--papel-sombra) var(--grao);
+    overflow:hidden;
+  }
+  .photo-band img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .photo-band.empty img{ display:none; }
+  .photo-band::after{
+    content:''; position:absolute; inset:16px;
+    border:1px solid rgba(251,249,242,.75);
+    pointer-events:none;
+  }
+  .photo-band.empty::before{
+    content:'Espaço para a foto principal do casal';
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:.68rem; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--salvia-claro);
+  }
+
+  /* ==================== FRASE ==================== */
+  .verse{
+    border-top:1px solid rgba(107,115,85,.25);
+    border-bottom:1px solid rgba(107,115,85,.25);
+    background:var(--papel-luz) var(--grao);
+  }
+  .verse blockquote{
+    font-style:italic; font-weight:300;
+    font-size:clamp(1.25rem, 4.6vw, 1.5rem);
+    color:var(--tinta);
+    max-width:460px; margin:0 auto;
+    line-height:1.8;
+  }
+  .verse cite{
+    display:block; margin-top:20px; font-style:normal;
+    font-size:.66rem; letter-spacing:.4em; text-transform:uppercase;
+    color:var(--salvia); font-weight:500;
+  }
+
+  /* ==================== CONTADOR ==================== */
+  .countdown{ display:flex; justify-content:center; align-items:stretch; }
+  .count{ padding:0 clamp(12px, 4vw, 26px); }
+  .count + .count{ border-left:1px solid rgba(107,115,85,.35); }
+  .count-num{
+    font-size:clamp(2.2rem, 9vw, 3rem); font-weight:300;
+    color:var(--oliva-escuro); line-height:1.05;
+    font-variant-numeric:tabular-nums;
+  }
+  .count-label{
+    margin-top:8px; font-size:.58rem; letter-spacing:.34em;
+    text-transform:uppercase; color:var(--salvia); font-weight:500;
+  }
+
+  /* ==================== NOSSA HISTÓRIA ==================== */
+  #historia p{
+    font-size:1.15rem; font-style:italic; font-weight:300;
+    max-width:460px; margin:0 auto; color:var(--tinta);
+  }
+
+  /* ==================== ÍCONES ==================== */
+  .icons-hint{
+    font-style:italic; font-weight:300;
+    font-size:.98rem; margin-bottom:40px; color:var(--tinta);
+  }
+  .icons-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:38px 18px;
+    max-width:440px; margin:0 auto;
+  }
+  .icon-card{
+    display:flex; flex-direction:column; align-items:center; gap:14px;
+    background:none; border:none; padding:6px;
+    text-decoration:none; color:var(--tinta); cursor:pointer;
+    font-family:'Cormorant Garamond',serif;
+    transition:transform .3s ease, opacity .3s ease;
+  }
+  .icon-card:hover{ transform:translateY(-4px); opacity:.75; }
+  .icon-card svg{ width:44px; height:44px; color:var(--salvia); }
+  .icon-card span{
+    font-size:.68rem; letter-spacing:.26em; text-transform:uppercase; font-weight:500;
+    color:var(--oliva-escuro);
+  }
+
+  /* ==================== LOCALIZAÇÃO ==================== */
+  .location-card{
+    max-width:440px; margin:0 auto; display:block;
+    padding:40px 26px;
+    background:var(--papel-luz) var(--grao);
+    border:1px solid rgba(107,115,85,.4);
+    text-decoration:none; color:inherit;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .location-card:hover{ transform:translateY(-3px); box-shadow:0 14px 30px var(--sombra); }
+  .location-card svg{ width:30px; height:30px; color:var(--salvia); margin-bottom:14px; }
+  .location-card h3{
+    font-size:1rem; font-weight:400;
+    letter-spacing:.3em; text-transform:uppercase;
+    color:var(--oliva-escuro);
+  }
+  .location-card p{
+    margin-top:10px; font-size:1.25rem; font-weight:400;
+    color:var(--tinta);
+  }
+  .location-card em{
+    display:block; margin-top:12px;
+    font-size:.66rem; letter-spacing:.3em; text-transform:uppercase; font-style:normal;
+    color:var(--salvia);
+  }
+
+  /* ==================== PROGRAMAÇÃO ==================== */
+  .timeline{ max-width:320px; margin:0 auto; text-align:left; position:relative; padding-left:34px; }
+  .timeline::before{
+    content:''; position:absolute; left:8px; top:8px; bottom:8px;
+    width:1px; background:rgba(107,115,85,.4);
+  }
+  .tl-item{ position:relative; padding-bottom:30px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{
+    content:''; position:absolute; left:-30px; top:7px;
+    width:8px; height:8px; border-radius:50%;
+    background:var(--papel); border:1px solid var(--salvia);
+  }
+  .tl-time{
+    font-size:.68rem; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--salvia); font-weight:500;
+  }
+  .tl-label{ font-size:1.3rem; font-weight:400; color:var(--oliva-escuro); line-height:1.3; }
+
+  /* ==================== GALERIA ==================== */
+  .gallery{
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    max-width:560px; margin:0 auto;
+  }
+  .g-item{
+    background:var(--papel-luz) var(--grao);
+    border:1px solid rgba(107,115,85,.35);
+    padding:7px;
+  }
+  .g-item:first-child{ grid-column:1 / -1; }
+  .g-item .g-inner{
+    position:relative; overflow:hidden; background:var(--papel-sombra);
+    aspect-ratio:3/4;
+  }
+  .g-item:first-child .g-inner{ aspect-ratio:16/10; }
+  .g-inner img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease; }
+  .g-item:hover .g-inner img{ transform:scale(1.04); }
+  .g-inner.empty img{ display:none; }
+  .g-inner.empty::after{
+    content:'Sua foto'; position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:.6rem; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--salvia-claro);
+  }
+
+  /* ==================== MENSAGEM + RSVP ==================== */
+  .message p{ max-width:460px; margin:0 auto; font-size:1.18rem; font-style:italic; font-weight:300; }
+  .btn-rsvp{
+    display:inline-flex; align-items:center; gap:12px;
+    margin-top:40px; padding:17px 46px;
+    background:var(--salvia); color:var(--papel-luz);
+    border:1px solid var(--salvia);
+    text-decoration:none; cursor:pointer;
+    font-family:'Cormorant Garamond',serif;
+    font-size:.74rem; letter-spacing:.34em; text-transform:uppercase; font-weight:500;
+    box-shadow:0 10px 24px var(--sombra);
+    transition:background .3s ease, transform .3s ease;
+  }
+  .btn-rsvp:hover{ background:var(--oliva-escuro); border-color:var(--oliva-escuro); transform:translateY(-2px); }
+  .btn-rsvp svg{ width:15px; height:15px; }
+
+  /* extras: agenda · playlist */
+  .extras{
+    margin-top:44px;
+    display:flex; justify-content:center; gap:16px; flex-wrap:wrap;
+  }
+  .extra-link{
+    display:inline-flex; align-items:center; gap:9px;
+    padding:12px 22px;
+    border:1px solid rgba(107,115,85,.45);
+    text-decoration:none; color:var(--oliva-escuro);
+    font-size:.66rem; letter-spacing:.22em; text-transform:uppercase; font-weight:500;
+    transition:background .3s ease;
+  }
+  .extra-link:hover{ background:var(--papel-luz); }
+  .extra-link svg{ width:14px; height:14px; color:var(--salvia); }
+
+  /* ==================== RODAPÉ ==================== */
+  footer{
+    margin-top:30px;
+    padding:84px 26px 72px;
+    text-align:center;
+    border-top:1px solid rgba(107,115,85,.25);
+    background:var(--papel-luz) var(--grao);
+  }
+  footer .branch-divider{ margin-bottom:30px; }
+  .footer-script{
+    font-family:'Mrs Saint Delafield', cursive;
+    font-size:clamp(2.7rem, 11vw, 3.5rem);
+    color:var(--salvia); line-height:1.2;
+  }
+  .footer-names{
+    margin-top:22px; font-size:.66rem; letter-spacing:.44em;
+    text-transform:uppercase; color:var(--oliva-escuro); font-weight:500;
+  }
+
+  /* ==================== MODAIS ==================== */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:950;
+    background:rgba(42,47,29,.55);
+    display:flex; align-items:center; justify-content:center;
+    padding:22px;
+    opacity:0; visibility:hidden;
+    transition:opacity .35s ease, visibility .35s ease;
+  }
+  .modal-overlay.show{ opacity:1; visibility:visible; }
+  .modal-card{
+    background:var(--papel-luz) var(--grao);
+    max-width:480px; width:100%; max-height:82vh; overflow-y:auto;
+    padding:10px;
+    position:relative; text-align:center;
+    transform:translateY(16px);
+    transition:transform .35s ease;
+  }
+  .modal-frame{
+    border:1px solid rgba(107,115,85,.35);
+    padding:46px 24px 34px;
+  }
+  .modal-overlay.show .modal-card{ transform:translateY(0); }
+  .modal-close{
+    position:absolute; top:20px; right:22px; z-index:2;
+    background:none; border:none; cursor:pointer;
+    font-size:1.5rem; color:var(--tinta); line-height:1;
+  }
+  .modal-card h2{
+    font-family:'Mrs Saint Delafield', cursive; font-weight:400;
+    font-size:2.6rem; color:var(--salvia); margin-bottom:24px; line-height:1.1;
+  }
+  .modal-card p{ font-size:1.12rem; font-weight:300; margin-bottom:16px; }
+  .modal-btn{
+    margin-top:14px; padding:13px 44px;
+    background:var(--salvia); color:var(--papel-luz);
+    border:none; cursor:pointer;
+    font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.3em; text-transform:uppercase; font-weight:500;
+    transition:background .3s ease;
+  }
+  .modal-btn:hover{ background:var(--oliva-escuro); }
+
+  /* ==================== ANIMAÇÃO DE ENTRADA ==================== */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body class="locked">
+
+<!-- ============================================================
+     MÚSICA — EDITE AQUI
+     "A Thousand Years" (Christina Perri) é protegida por direitos
+     autorais, então o arquivo não vem incluído. Como adicionar:
+       1. Obtenha o MP3 legalmente (compra na Amazon Music / iTunes).
+       2. Salve na MESMA PASTA deste HTML com o nome:  musica.mp4
+       3. Pronto — a música começa quando o lacre é aberto.
+     Alternativa: troque o src por uma URL hospedada.
+     ============================================================ -->
+<audio id="bg-music" loop preload="auto">
+  <source src="musica.mp4" type="audio/mpeg">
+</audio>
+
+<div class="music-controls">
+  <button class="music-btn" id="btn-music" aria-label="Tocar ou pausar música" title="Música">
+    <svg id="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    <svg id="icon-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+  </button>
+</div>
+
+<!-- ==================== ENVELOPE (CAPA) ==================== -->
+<div id="envelope-overlay" aria-label="Convite fechado. Toque no lacre para abrir.">
+
+  <div class="env-title">Larissa &amp; Roberto</div>
+
+  <div class="env-stage">
+    <div class="env-shadow"></div>
+    <div class="env-back"></div>
+
+    <!-- a carta que sai de dentro -->
+    <div class="env-paper">
+      <div class="p-word">Larissa e Roberto</div>
+      <div class="p-tree">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.6"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M100 192 V 84"/>
+          <g id="galhos-araucaria-carta">
+            <path d="M100 150 C 88 148 74 142 60 132"/>
+            <path d="M60 132 l-11 -5 M60 132 l-12 3 M60 132 l-7 9 M60 132 l-4 -11"/>
+            <path d="M100 132 C 86 128 72 118 58 105"/>
+            <path d="M58 105 l-12 -3 M58 105 l-11 5 M58 105 l-5 11 M58 105 l-3 -12"/>
+            <path d="M100 114 C 88 106 76 94 66 79"/>
+            <path d="M66 79 l-12 -1 M66 79 l-10 7 M66 79 l-2 12 M66 79 l-5 -11"/>
+            <path d="M100 98 C 94 88 88 76 85 62"/>
+            <path d="M85 62 l-11 3 M85 62 l-8 9 M85 62 l1 12 M85 62 l-6 -10"/>
+          </g>
+          <use href="#galhos-araucaria-carta" transform="translate(200,0) scale(-1,1)"/>
+          <path d="M100 92 V 52"/>
+          <path d="M100 52 l-10 6 M100 52 l10 6 M100 52 l-7 -8 M100 52 l7 -8 M100 52 v-11"/>
+        </svg>
+      </div>
+      <div class="p-date">14 . 11 . 2026&nbsp;&nbsp;|&nbsp;&nbsp;16h</div>
+
+    </div>
+
+    <div class="env-front"></div>
+    <div class="env-flap"></div>
+
+    <!-- lacre de cera dourado -->
+    <div class="env-seal" id="env-seal" role="button" tabindex="0" aria-label="Abrir convite">
+      <div class="s-mono"><span>L</span><span class="s-heart">♥</span><span>R</span></div>
+    </div>
+  </div>
+
+  <div class="env-caption">Toque no lacre para abrir</div>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="hero-word">Larissa e Roberto</div>
+
+  <!-- araucária em traço fino -->
+  <div class="araucaria">
+    <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.15"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <!-- tronco -->
+      <path d="M100 192 V 84"/>
+      <g id="galhos-araucaria">
+        <!-- galho 1 (mais baixo) -->
+        <path d="M100 150 C 88 148 74 142 60 132"/>
+        <path d="M60 132 l-11 -5 M60 132 l-12 3 M60 132 l-7 9 M60 132 l-4 -11"/>
+        <!-- galho 2 -->
+        <path d="M100 132 C 86 128 72 118 58 105"/>
+        <path d="M58 105 l-12 -3 M58 105 l-11 5 M58 105 l-5 11 M58 105 l-3 -12"/>
+        <!-- galho 3 -->
+        <path d="M100 114 C 88 106 76 94 66 79"/>
+        <path d="M66 79 l-12 -1 M66 79 l-10 7 M66 79 l-2 12 M66 79 l-5 -11"/>
+        <!-- galho 4 (junto à copa) -->
+        <path d="M100 98 C 94 88 88 76 85 62"/>
+        <path d="M85 62 l-11 3 M85 62 l-8 9 M85 62 l1 12 M85 62 l-6 -10"/>
+      </g>
+      <use href="#galhos-araucaria" transform="translate(200,0) scale(-1,1)"/>
+      <!-- ponta central -->
+      <path d="M100 92 V 52"/>
+      <path d="M100 52 l-10 6 M100 52 l10 6 M100 52 l-7 -8 M100 52 l7 -8 M100 52 v-11"/>
+    </svg>
+  </div>
+
+
+
+  <p class="hero-intro">Carinhosamente, convidamos você e sua família para celebrar o nosso casamento</p>
+
+  <div class="hero-date">14 . 11 . 2026&nbsp;&nbsp;|&nbsp;&nbsp;16h</div>
+</header>
+
+<!-- ==================== FOTO PRINCIPAL ==================== -->
+<!-- EDITE AQUI: crie a pasta "fotos" ao lado deste arquivo e salve a
+     foto principal como fotos/capa.jpg (formato paisagem fica melhor). -->
+<div class="photo-band" id="photo-capa">
+  <img src="fotos/capa.jpg" alt="Larissa e Roberto"
+       onerror="this.parentElement.classList.add('empty')">
+</div>
+
+<!-- ==================== FRASE ==================== -->
+<section class="section verse reveal">
+  <!-- EDITE AQUI: troque pela frase romântica que vocês escolherem
+       (e ajuste ou apague a linha <cite> logo abaixo). -->
+  <blockquote><p>Entre todos os caminhos possíveis, escolhemos um ao outro - e escolhemos de novo, todos os dias.</p>
+<p>Para sempre.</p> </blockquote>
+  <cite>Larissa e Roberto</cite>
+</section>
+
+<!-- ==================== CONTADOR ==================== -->
+<section class="section reveal">
+  <p class="eyebrow">Contagem regressiva</p>
+  <h2 class="script-title">Faltam</h2>
+  <div class="countdown">
+    <div class="count"><div class="count-num" id="cd-dias">–</div><div class="count-label">dias</div></div>
+    <div class="count"><div class="count-num" id="cd-horas">–</div><div class="count-label">horas</div></div>
+    <div class="count"><div class="count-num" id="cd-min">–</div><div class="count-label">min</div></div>
+    <div class="count"><div class="count-num" id="cd-seg">–</div><div class="count-label">seg</div></div>
+  </div>
+</section>
+
+<!-- ==================== NOSSA HISTÓRIA ==================== -->
+<section class="section reveal" id="historia">
+  <p class="eyebrow">Do primeiro olhar ao sim</p>
+  <h2 class="script-title">Nossa história</h2>
+  <svg class="branch-divider" viewBox="0 0 120 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M4 12 Q60 4 116 12"/><path d="M22 11 q2 -7 7 -8 q-1 7 -7 8 M40 8.5 q2 -7 7 -8 q-1 7 -7 8 M62 8 q-2 -7 -7 -8 q1 7 7 8 M80 10 q-2 -7 -7 -8 q1 7 7 8 M98 12 q-2 -7 -7 -8 q1 7 7 8"/></svg>
+  <!-- EDITE AQUI: escrevam em poucas linhas como se conheceram,
+       o pedido, ou o que quiserem contar aos convidados. -->
+  <p>Toda grande história começa com um encontro. A nossa começou de um jeitinho só nosso. Quem diria que aquele dia lá na clinica, formaria uma linda familia...</p>
+</section>
+
+<!-- ==================== ÍCONES ==================== -->
+<section class="section reveal" id="detalhes">
+  <p class="eyebrow">Detalhes do grande dia</p>
+  <p class="icons-hint">Toque nos ícones para mais informações</p>
+  <div class="icons-grid">
+
+    <!-- EDITE AQUI: link da lista de presentes -->
+    <a class="icon-card" id="link-presentes" href="https://sites.icasei.com.br/lariebeto/pages/38449286" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4"/><rect x="5" y="12" width="14" height="9"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M12 8 C12 8 12 3.5 8.5 3.5 C6 3.5 6 8 12 8 Z"/><path d="M12 8 C12 8 12 3.5 15.5 3.5 C18 3.5 18 8 12 8 Z"/></svg>
+      <span>Lista de Presentes</span>
+    </a>
+
+    <!-- EDITE AQUI: link do site de confirmação de presença -->
+    <a class="icon-card" id="link-rsvp" href="https://sites.icasei.com.br/lariebeto/pages/38448987" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/><polyline points="8.5 12.2 11 14.6 15.5 9.8"/></svg>
+      <span>Confirmar Presença</span>
+    </a>
+
+    <!-- Mesmo link do RSVP: quem não puder vir também avisa por lá -->
+    <a class="icon-card link-rsvp-alt" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.4 C 9 17.8 4 14 4 9.6 A 4.6 4.6 0 0 1 12 6.6 A 4.6 4.6 0 0 1 20 9.6 C 20 14 15 17.8 12 20.4 Z"/><line x1="4.6" y1="3.4" x2="19.6" y2="20.6"/></svg>
+      <span>Não poderei ir</span>
+    </a>
+
+    <button class="icon-card" data-modal="modal-info" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><line x1="12" y1="10.6" x2="12" y2="16.6"/><circle cx="12" cy="7.6" r="0.4" fill="currentColor"/></svg>
+      <span>Informações Importantes</span>
+    </button>
+
+    <a class="icon-card link-maps" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21 V11 L12 4 L20 11 V21"/><line x1="4" y1="21" x2="20" y2="21"/><line x1="12" y1="1.6" x2="12" y2="4"/><line x1="10.6" y1="2.6" x2="13.4" y2="2.6"/><path d="M9.5 21 v-5 a2.5 2.5 0 0 1 5 0 v5"/></svg>
+      <span>Cerimônia &amp; Festa</span>
+    </a>
+
+    <button class="icon-card" data-modal="modal-dress" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2 v2.4 L7 9 l2.2 1.6 L5.5 21 h13 L14.8 10.6 L17 9 L15 4.4 V2"/><line x1="9" y1="2" x2="15" y2="2"/></svg>
+      <span>Dress Code</span>
+    </button>
+
+  </div>
+</section>
+
+<!-- ==================== LOCALIZAÇÃO ==================== -->
+<section class="section reveal" id="local">
+  <!-- EDITE AQUI: cole o link do Google Maps no href e troque o nome
+       do local. O ícone "Cerimônia & Festa" usa o mesmo link. -->
+  <a class="location-card link-maps" id="link-maps" href="https://www.google.com/maps/place/Recanto+Joao+e+Maria/@-23.242279,-47.0638236,17z/data=!3m1!4b1!4m6!3m5!1s0x94cf397daaa9d133:0x11d2df17180b88f9!8m2!3d-23.242279!4d-47.0612487!16s%2Fg%2F11g7nwdcmd?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <h3>Cerimônia &amp; Festa</h3>
+    <p>Recanto João e Maria </p>
+    <p>Rua Frei Galvão, 366, Cabreúva</p>
+    <em>Toque para abrir no Google Maps</em>
+  </a>
+</section>
+
+<!-- ==================== PROGRAMAÇÃO DO DIA ==================== -->
+<section class="section reveal" id="programa">
+  <p class="eyebrow">Como será o dia</p>
+  <h2 class="script-title">Programação</h2>
+  <!-- EDITE AQUI: ajustem os horários e momentos do dia de vocês. -->
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-time">15h30</div><div class="tl-label">Recepção</div></div>
+    <div class="tl-item"><div class="tl-time">16h00</div><div class="tl-label">Cerimônia</div></div>
+    <div class="tl-item"><div class="tl-time">16h40</div><div class="tl-label">Fotos &amp; Social</div></div>
+    <div class="tl-item"><div class="tl-time">17h00</div><div class="tl-label">Entradas</div></div>
+    <div class="tl-item"><div class="tl-time">17h30</div><div class="tl-label">Jantar</div></div>
+    <div class="tl-item"><div class="tl-time">18h30</div><div class="tl-label">Festa</div></div>
+  </div>
+</section>
+
+<!-- ==================== GALERIA ==================== -->
+<section class="section reveal" id="galeria">
+  <p class="eyebrow">Memórias</p>
+  <h2 class="script-title">Nossos momentos</h2>
+  <!-- EDITE AQUI: salve as fotos na pasta "fotos" com os nomes
+       foto1.jpg, foto2.jpg e foto3.jpg (ou troque os src). -->
+  <div class="gallery">
+    <div class="g-item"><div class="g-inner"><img src="fotos/foto1.jpg" alt="" onerror="this.parentElement.classList.add('empty')"></div></div>
+    <div class="g-item"><div class="g-inner"><img src="fotos/foto2.jpg" alt="" onerror="this.parentElement.classList.add('empty')"></div></div>
+    <div class="g-item"><div class="g-inner"><img src="fotos/foto3.jpg" alt="" onerror="this.parentElement.classList.add('empty')"></div></div>
+  </div>
+</section>
+
+<!-- ==================== MENSAGEM + RSVP ==================== -->
+<section class="section message reveal">
+  <p class="eyebrow">Com carinho</p>
+  <h2 class="script-title">Mensagem</h2>
+  <p>Você ocupa um lugar muito especial em nossas vidas, e compartilhar esse momento com você será uma imensa alegria. Sua presença dará ainda mais significado e emoção a esse dia inesquecível.</p>
+
+  <a class="btn-rsvp" id="link-rsvp-2" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+    Confirmar presença
+  </a>
+
+  <div class="extras">
+    <!-- Salvar na agenda: link pronto do Google Agenda (edite o
+         "location" se quiserem incluir o endereço). -->
+    <a class="extra-link" target="_blank" rel="noopener"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+Larissa+%26+Roberto&dates=20261114T190000Z/20261115T020000Z&details=Vai+ser+lindo!+Esperamos+voc%C3%AA.&location=">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Salvar na agenda
+    </a>
+
+    <!-- EDITE AQUI: link para sugerir música (playlist colaborativa
+         do Spotify ou um formulário) — os convidados amam. -->
+    <a class="extra-link" id="link-playlist" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      Sugira uma música
+    </a>
+  </div>
+</section>
+
+<!-- ==================== RODAPÉ ==================== -->
+<footer>
+  <svg class="branch-divider" viewBox="0 0 120 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M4 12 Q60 4 116 12"/><path d="M22 11 q2 -7 7 -8 q-1 7 -7 8 M40 8.5 q2 -7 7 -8 q-1 7 -7 8 M62 8 q-2 -7 -7 -8 q1 7 7 8 M80 10 q-2 -7 -7 -8 q1 7 7 8 M98 12 q-2 -7 -7 -8 q1 7 7 8"/></svg>
+  <div class="footer-script">Esperamos por você!</div>
+  <div class="footer-names">Larissa e Roberto · 14.11.2026</div>
+</footer>
+
+<!-- ==================== MODAL: INFORMAÇÕES ==================== -->
+<div class="modal-overlay" id="modal-info" role="dialog" aria-modal="true" aria-labelledby="titulo-info">
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Fechar">&times;</button>
+    <div class="modal-frame">
+      <h2 id="titulo-info">Informações Importantes</h2>
+      <!-- EDITE AQUI: horário de chegada, estacionamento, crianças,
+           transporte, hospedagem etc. -->
+      <p>A festa acabará às 22h. Quem preferir não pegar estrada a noite há opções de pousadas e hoteis em Cabreúva, Itu ou Jundiaí. 🌿</p>
+<p>Venha com muita alegria, energia e vontade de celebrar! Queremos curtir esse dia com você para ficar para sempre em nossa memória</p>
+      <button class="modal-btn" data-close type="button">Entendi</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MODAL: DRESS CODE ==================== -->
+<div class="modal-overlay" id="modal-dress" role="dialog" aria-modal="true" aria-labelledby="titulo-dress">
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Fechar">&times;</button>
+    <div class="modal-frame">
+      <h2 id="titulo-dress">Dress Code</h2>
+      <p>Queremos que você se sinta confortável e confiante para celebrar esse dia tão especial conosco. Sinta-se à vontade para usar o estilo e as cores que mais combinam com você.</p>
+      <p>Pedimos apenas um carinho especial:<br>🤍 a cor branca é reservada exclusivamente para a noiva.</p>
+      <p>De resto, escolha um look que te faça se sentir bem, aproveite cada momento e venha celebrar o amor com a gente! 💃</p>
+      <button class="modal-btn" data-close type="button">Entendi</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ==================== ENVELOPE ==================== */
+  const overlay = document.getElementById('envelope-overlay');
+  const seal    = document.getElementById('env-seal');
+  const paper   = document.querySelector('.env-paper');
+  const music   = document.getElementById('bg-music');
+  let opened = false;
+
+  /* a carta sai pequena do envelope e cresce até ocupar a tela toda,
+     tornando-se o próprio fundo da página (transição contínua) */
+  function crescerCarta(){
+    const r = paper.getBoundingClientRect();
+    overlay.classList.add('grow');           // o envelope se dissolve
+    paper.classList.add('growing');
+    paper.style.left      = r.left  + 'px';  // congela a posição atual
+    paper.style.top       = r.top   + 'px';
+    paper.style.width     = r.width + 'px';
+    paper.style.height    = r.height + 'px';
+    paper.style.transform = 'none';
+    overlay.appendChild(paper);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      paper.style.left   = '0px';            // ...e expande até a tela inteira
+      paper.style.top    = '0px';
+      paper.style.width  = '100vw';
+      paper.style.height = '100vh';
+    }));
+  }
+
+  function abrirConvite(){
+    if(opened) return;
+    opened = true;
+    overlay.classList.add('open');                                 // aba levanta em 3D
+    tocarMusica();                                                 // o toque libera o áudio
+    setTimeout(() => overlay.classList.add('flap-behind'),  620);  // aba passa p/ trás da carta
+    setTimeout(() => overlay.classList.add('out'),          950);  // a carta sai de dentro
+    setTimeout(crescerCarta,                               2400);  // a carta cresce até a tela
+    setTimeout(() => {                                             // crossfade invisível p/ o site
+      overlay.classList.add('done');
+      document.body.classList.remove('locked');
+      window.scrollTo(0, 0);
+    }, 3650);
+    setTimeout(() => { overlay.style.display = 'none'; }, 4750);
+  }
+  seal.addEventListener('click', abrirConvite);
+  overlay.addEventListener('click', abrirConvite);
+  seal.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') abrirConvite();
+  });
+
+  /* partículas douradas flutuando ao fundo */
+  for(let i = 0; i < 10; i++){
+    const d = document.createElement('span');
+    d.className = 'dust';
+    const s = 2 + Math.random() * 3;
+    d.style.width = d.style.height = s + 'px';
+    d.style.left = (5 + Math.random() * 90) + '%';
+    d.style.top  = (55 + Math.random() * 40) + '%';
+    d.style.animationDuration = (6 + Math.random() * 6) + 's';
+    d.style.animationDelay = (Math.random() * 6) + 's';
+    overlay.appendChild(d);
+  }
+
+  /* ==================== MÚSICA ==================== */
+  const btnMusic = document.getElementById('btn-music');
+  const iconPlay = document.getElementById('icon-play');
+  const iconMute = document.getElementById('icon-mute');
+  let tocando = false;
+
+  function atualizarIcone(){
+    iconPlay.style.display = tocando ? 'none'  : 'block';
+    iconMute.style.display = tocando ? 'block' : 'none';
+  }
+  function tocarMusica(){
+    music.play().then(() => { tocando = true; atualizarIcone(); })
+                .catch(() => { /* arquivo ausente ou autoplay bloqueado */ });
+  }
+  btnMusic.addEventListener('click', () => {
+    if(tocando){ music.pause(); tocando = false; atualizarIcone(); }
+    else tocarMusica();
+  });
+
+  /* ==================== CONTADOR ==================== */
+  // EDITE AQUI caso a data ou o horário mudem:
+  const dataCasamento = new Date('2026-11-14T16:00:00-03:00');
+
+  const pad = n => String(n).padStart(2, '0');
+  function atualizarContador(){
+    let diff = Math.max(0, dataCasamento - new Date());
+    document.getElementById('cd-dias').textContent  = Math.floor(diff / 86400000);
+    document.getElementById('cd-horas').textContent = pad(Math.floor(diff % 86400000 / 3600000));
+    document.getElementById('cd-min').textContent   = pad(Math.floor(diff % 3600000 / 60000));
+    document.getElementById('cd-seg').textContent   = pad(Math.floor(diff % 60000 / 1000));
+  }
+  atualizarContador();
+  setInterval(atualizarContador, 1000);
+
+  /* ==================== MODAIS ==================== */
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () =>
+      document.getElementById(btn.dataset.modal).classList.add('show'));
+  });
+  document.querySelectorAll('.modal-overlay').forEach(m => {
+    m.addEventListener('click', e => {
+      if(e.target === m || e.target.hasAttribute('data-close')) m.classList.remove('show');
+    });
+  });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape')
+      document.querySelectorAll('.modal-overlay.show').forEach(m => m.classList.remove('show'));
+  });
+
+  /* ==================== REVELAR AO ROLAR ==================== */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if(en.isIntersecting) en.target.classList.add('in'); });
+  }, { threshold:.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Sincroniza links repetidos: edite só id="link-maps" e id="link-rsvp". */
+  window.addEventListener('DOMContentLoaded', () => {
+    const mapsHref = document.getElementById('link-maps').getAttribute('href');
+    document.querySelectorAll('.link-maps').forEach(a => a.setAttribute('href', mapsHref));
+    const rsvpHref = document.getElementById('link-rsvp').getAttribute('href');
+    document.getElementById('link-rsvp-2').setAttribute('href', rsvpHref);
+    document.querySelectorAll('.link-rsvp-alt').forEach(a => a.setAttribute('href', rsvpHref));
+  });
+</script>
+</body>
+</html>
